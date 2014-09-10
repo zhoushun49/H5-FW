@@ -1,0 +1,662 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: 'HiraKakuProN-W3';
+    font-size: 9pt;
+}
+
+html {
+    -ms-touch-action: none;
+}
+html.ios{
+    overflow: hidden;
+}
+html.android{
+
+}
+
+/*body{*/
+/*width: 100%;*/
+/*height: 100%;*/
+/*}*/
+
+/************************ app-page start *********************/
+.app-page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    font-size: 10pt;
+    z-index: 1;
+}
+.app-page.ios
+{
+    overflow: hidden;
+}
+
+.app-page.android
+{
+    overflow-x: hidden;
+}
+
+/************************ app-page end *********************/
+
+/************************ app-content start *********************/
+.app-content {
+    z-index: 2000;
+    position: relative;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+    overflow-x: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/************************ app-content end *********************/
+
+/*app-topbar start*/
+
+.app-topbar {
+    position: fixed;
+    height: 44px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(252,252,252);
+    border-bottom: 1px solid rgba(126,126,126,.2);
+    box-shadow: 0 1px 4px rgba(25,25,25,.2);
+    color: #FFF;
+    z-index: 9999;
+}
+.app-topbar *
+{
+    box-sizing: initial;
+}
+
+.app-topbar.gray {
+    text-align: center;
+    background-color: rgb(105, 105, 105);
+    background: -webkit-gradient(linear, left top, left bottom, from(rgb(140, 140, 140)), to(rgb(105, 105, 105)));
+}
+
+.app-topbar.blue {
+    text-align: center;
+    background-color: rgb(30, 67, 151);
+    background: -webkit-gradient(linear, left top, left bottom, from(rgb(30, 67, 151)), to(rgb(8, 53, 117)));
+}
+
+.app-topbar.default{
+    background: #f8f8f8;
+    color: #1f1f21;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-bottom: 1px solid #ddd;
+}
+
+.app-topbar.default .app-title{
+    line-height: 44px;
+    font-size: 17px;
+    color: #1f1f21;
+    font-weight: normal !important;
+    text-shadow: none !important;
+}
+
+.app-topbar.green {
+    background-color: #3C7;
+    -webkit-box-shadow: inset 0 -1px 0 #2A6, 0 1px 0 rgba(0, 0, 0, 0.1), 0 1px 7px rgba(0, 0, 0, 0.18);
+    box-shadow: inset 0 -1px 0 #2A6, 0 1px 0 rgba(0, 0, 0, 0.1), 0 1px 7px rgba(0, 0, 0, 0.18);
+    color: #F3F4F5;
+}
+
+.app-topbar.yellow {
+    background-color: #EC1;
+    -webkit-box-shadow: inset 0 -1px 0 #DB0, 0 1px 0 rgba(0, 0, 0, 0.1), 0 1px 7px rgba(0, 0, 0, 0.18);
+    box-shadow: inset 0 -1px 0 #DB0, 0 1px 0 rgba(0, 0, 0, 0.1), 0 1px 7px rgba(0, 0, 0, 0.18);
+    color: #F3F4F5;
+}
+
+.app-topbar.orange {
+    background-color: #E82;
+    -webkit-box-shadow: inset 0 -1px 0 #C50, 0 1px 0 rgba(0, 0, 0, 0.1), 0 1px 7px rgba(0, 0, 0, 0.18);
+    box-shadow: inset 0 -1px 0 #C50, 0 1px 0 rgba(0, 0, 0, 0.1), 0 1px 7px rgba(0, 0, 0, 0.18);
+    color: #F3F4F5;
+}
+
+.app-topbar .app-title {
+    position: relative;
+    margin: 0 auto;
+    height: 100%;
+    width:200px;
+    color: #ffffff;
+    font-size: 20px;
+    text-shadow: 1px 2px 2px #444444;
+    font-weight: bold;
+    line-height: 44px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.app-topbar .app-title .app-icon {
+    display: none;
+    float: left;
+    margin: 12px 7px 12px -4px;
+    height: 24px;
+    width: 24px;
+    background-image: url(data:image/gif;base64,R0lGODlhAQABAIAAAPj8/wAAACwAAAAAAQABAAACAkQBADs=);
+    -webkit-background-size: 100%;
+    background-size: 100%;
+}
+
+.app-topbar .app-button {
+    position: absolute;
+    bottom: 0;
+    padding: 0 4px;
+    height: 100%;
+    line-height: 44px;
+}
+
+.app-topbar .app-button[data-back].left {
+    padding: 0 10px;
+    background-size: 20px;
+    text-align: center;
+}
+.app-topbar .app-button[data-back].left span{
+    position: relative;
+    font-size: 10pt;
+    top: -1px;
+    font-weight: lighter;
+}
+
+.app-topbar .app-button[data-back].left span.icon{
+    top: 0;
+    font-size: 20px;
+}
+
+.app-topbar .app-button[data-back].left:active {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 0;
+    border-right: 1px solid rgba(102, 102, 102, 0.3);;
+}
+
+.app-topbar .app-button[data-back].right {
+    right:0;
+    padding: 0 10px;
+    width: 40px;
+    font-weight: lighter;
+    color: #ffffff;
+}
+
+.app-topbar .app-button[data-back].right:active {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 0;
+    border-left: 1px solid #494949;
+}
+
+/*app-topbar end*/
+
+
+/******************** app-container start *************************/
+.app-container {
+    /*overflow: hidden;*/
+    /*-webkit-transform: translate3d(0,0,0);*/
+    position: absolute;
+    top: 44px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f0f0f0;
+}
+.app-container.ios{
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+}
+
+.app-container.android{
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.app-container.android.pre{
+    overflow: hidden;
+}
+
+
+/******************** app-container end *************************/
+
+/******************** app-button start *************************/
+
+.app-button {
+    margin: 0 auto;
+    height: 40px;
+    /*width: 100px;*/
+    border-bottom: 1px solid #AAA;
+    line-height: 40px;
+    overflow: hidden;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    border-radius: 4px;
+}
+
+.app-button:last-child {
+    border-bottom: none;
+}
+
+.app-button {
+    font-weight: bold;
+}
+
+.app-button.red,
+.app-button.green,
+.app-button.blue {
+    color: #FFF;
+}
+
+.app-button.red.active,
+.app-button.green.active,
+.app-button.blue.active {
+    color: #EEE;
+}
+
+.app-button.red {
+    background-color: #F0293A;
+}
+
+.app-button.red:active {
+    background-color: #D0091A;
+}
+
+.app-button.green {
+    background-color: #5CCC5C;
+}
+
+.app-button.green:active {
+    background-color: #3CAC3C;
+}
+
+.app-button.blue {
+    background-color: #1C7DE6;
+}
+
+.app-button.blue:active {
+    background-color: #005DC6;
+}
+
+.app-button.white {
+    background-color: #fff;
+}
+
+.app-content .app-button.white:active {
+    background-color: #eee;
+}
+
+.app-button.red,
+.app-button.green,
+.app-button.blue {
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+}
+
+/******************** app-button end *************************/
+
+.scroller {
+    position: relative;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    /*overflow-y: scroll;*/
+    /*height: 100%;*/
+    width: 100%;
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+    -o-text-size-adjust: none;
+    text-size-adjust: none;
+}
+.noscroller {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+
+}
+
+.scroller *{
+    /*-webkit-transform: translate3d(0,0,0);*/
+}
+
+.app-section {
+    padding: 8px;
+    background: #fff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+}
+
+.app-section,
+.app-list > li,
+.app-list > li.app-button,
+.app-content .app-button,
+.app-input {
+    border: none;
+}
+.app-section .app-list >li.app-button
+{
+    margin-top: 5px;
+}
+
+.app-section .app-button {
+    /*padding: 10px;*/
+    /*text-align: left !important;*/
+}
+
+/******************** app-section start *************************/
+.app-section > * {
+    /*margin: 8px 0 0;*/
+    /*-webkit-border-radius: 4px;*/
+    /*border-radius: 4px;*/
+}
+
+.app-section > :first-child {
+    margin-top: 0;
+}
+
+/******************** app-section end *************************/
+
+/*----------app-loading start---------*/
+/*.app-loading{*/
+    /*position:absolute;*/
+    /*z-index:8888;*/
+    /*width: 100%;*/
+    /*height: 100%;*/
+    /*overflow: hidden;*/
+/*}*/
+/*.app-loading div#spinner_div{*/
+    /*position: absolute;*/
+    /*background-color: #000000;*/
+    /*min-width: 80px;*/
+    /*opacity: 0.8;*/
+    /*-webkit-border-radius:3px;*/
+    /*-moz-border-radius:3px;*/
+    /*border-radius:3px;*/
+    /*box-shadow:0px 0px 3px rgba(0, 0, 0, 1);*/
+/*}*/
+/*.app-loading p{*/
+    /*color: #fff;*/
+    /*margin-top: 48px;*/
+    /*font-size: 14px;*/
+    /*text-align: center;*/
+    /*padding: 10px 20px;*/
+    /*min-width: 60px;*/
+    /*word-break:keep-all;*/
+    /*white-space:nowrap;*/
+    /*overflow:hidden;*/
+    /*text-overflow:ellipsis;*/
+/*}*/
+/*--------app-loading end--------*/
+
+/* ------------app-dialog-start------------------*/
+.app-dialog-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    max-width: 540px;
+    min-width: 240px;
+    height: auto;
+    z-index: 9998;
+    margin:0;
+    visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+.app-dialog-effect .app-dialog-content {
+    -webkit-transform: scale(0.7);
+    -moz-transform: scale(0.7);
+    -ms-transform: scale(0.7);
+    transform: scale(0.7);
+    opacity: 0;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.app-dialog-show.app-dialog-effect .app-dialog-content {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+}
+
+.app-dialog-overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    top: 0;
+    left: 0;
+    z-index: 9997;
+    opacity: 0;
+    background: rgba(0,0,0,0.1);
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.app-dialog-overlay-show {
+    opacity: 1;
+    visibility: visible;
+}
+.app-dialog-show {
+    visibility: visible;
+}
+
+.app-dialog-content{
+    width: 100%;
+    background-color:#fff;
+    border-radius:3px;
+    box-shadow:0px 0px 6px rgba(0, 0, 0, 1);
+    text-align:center;
+    padding-bottom: 12px;
+}
+
+.app-dialog-content h1{
+    font-size:18px;
+    line-height:35px;
+    border-bottom: 1px solid #444444;
+    margin:0;
+}
+
+.app-dialog-content table {
+    width:100%;
+    border:0;
+    border-collapse:collapse;
+    border-spacing:0;
+    margin:10px 0;
+    word-break:break-all;
+    word-wrap:break-word;
+}
+.app-dialog-modal .app-button {
+    width: 50%;
+    line-height: 30px;height: 30px;
+    margin-top: 10px;
+}
+/* -------------app-dialog-end-----------------*/
+
+
+/* --------------- app-tabview-start ----------------*/
+.app-content.app-tab-item-content{
+    z-index: 2000;
+    position: relative;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+    overflow-x: hidden;
+    box-shadow:none !important;
+}
+
+.app-tab-bar {
+    font-family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    display: table;
+    table-layout: fixed;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    white-space: nowrap;
+    margin: 0;
+    padding: 0;
+    height: 49px;
+    background-color: #f8f8f8;
+    border-top: 1px solid #ddd;
+    width: 100%;
+}
+.app-tab-container{
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    right: 0;
+    top: 0;
+    /*background-color: #f8f8f8;*/
+}
+.app-tab-bar.footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.app-tab-bar-item {
+    font-family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    position: relative;
+    overflow: hidden;
+    display: table-cell;
+    width: auto;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    color: #888;
+
+}
+.app-tab-bar-item > input {
+    position: absolute;
+    overflow: hidden;
+    right: 0px;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    padding: 0;
+    border: 0;
+    opacity: 0.001;
+    z-index: 1;
+    vertical-align: top;
+    outline: none;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    -webkit-appearance: none;
+    appearance: none;
+}
+.app-tab-bar-button {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    font-family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    color: inherit;
+    background: transparent;
+    border: none;
+    line-height: normal;
+    cursor: default;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    text-decoration: none;
+    padding: 0;
+    height: 49px;
+    line-height: 49px;
+    letter-spacing: 0;
+    text-shadow: 0 1px none;
+    vertical-align: top;
+    background-color: #f8f8f8;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-top: none;
+    width: 100%;
+    font-weight: 400;
+}
+
+.app-tab-bar-button > .tab-bar-icon {
+    font-size: 18px;
+    padding: 0;
+    margin: 0;
+    line-height: 30px;
+    display: block;
+    height: 32px;
+}
+.tab-bar-label {
+    font-family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+}
+.tab-bar-icon + .tab-bar-label {
+    font-size: 10px;
+    line-height: 1;
+    margin: 0;
+    font-weight: 400;
+}
+
+.app-tab-bar-item.active{
+    color: #1C7DE6 !important;
+}
+
+/* --------------- app-tabview-end ----------------*/
+
+
+
+
+

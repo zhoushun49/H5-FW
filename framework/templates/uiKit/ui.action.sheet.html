@@ -1,0 +1,18 @@
+<div class="app-action-sheet-background" id="actionSheet" >
+    <div class="app-action-sheet-wrapper">
+        <div class="app-action-sheet">
+            <div class="app-action-sheet-group" id="otherGroup">
+                <div class="app-action-sheet-title">{{titleText}}</div>
+                {{#each buttons}}
+                <button class="button" sheet-index="{{@index}}">{{title}}</button>
+                {{/each}}
+            </div>
+            <div class="app-action-sheet-group">
+                <button class="button destructive" id="destructive" >{{destructiveText}}</button>
+            </div>
+            <div class="app-action-sheet-group">
+                <button class="button" id="cancel">{{cancelText}}</button>
+            </div>
+        </div>
+    </div>
+</div>

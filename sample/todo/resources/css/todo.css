@@ -1,0 +1,9 @@
+.inner-page{
+    position: relative;
+    padding: 10px;
+}
+
+.inner-page .app-section
+{
+    margin-top: 10px;
+}

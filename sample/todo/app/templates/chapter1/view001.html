@@ -1,0 +1,47 @@
+<section class="inner-page">
+    <div class="app-section">
+        <ul class="app-list">
+            <li id="push" class="app-button blue">Tap To NextView</li>
+            <li>
+                <div class="helps">
+定义一个View
+<pre>
+var USMView = require("usmView"),
+    $ = require("jquery"),
+    //引入模板
+    Tmp = require("text!sample/todo/app/templates/
+                chapter1/view001.html");
+
+var View = USMView.extend({
+           pageTitle: '定义title',
+           initialize: function (obj) {
+                this.prepare();//生成一些View的变量及id
+           },
+           render: function () {
+                this.doInit();
+                return this;
+           }
+        });
+
+View.prototype.doInit = function () { //动态增加方法
+          ......
+        };
+        ......
+</pre>
+切换到下个View
+<pre>
+@context: 值当前View对象
+@url: 切换到下个View
+@param: 传递到下个View的参数
+@callback: 回调函数中，可接收从下个View传回的参数
+
+View.prototype.toNext = function () {
+          context.openView('url', 'param', 'callback');
+        };
+</pre>
+                </div>
+
+            </li>
+        </ul>
+    </div>
+</section>

@@ -1,0 +1,17 @@
+<section id="{{ids.pageID}}" class="app-page">
+    <div class="app-content">
+        <header class="app-topbar {{navBarClass}}">
+            <div class="app-title" style="">{{titleText}}</div>
+            {{#if backButton.visible}}
+            <div id="{{backButton.backID}}" class="left app-button" data-back="">
+                <span class="iconfont icon">&#xe679</span>
+                <span>{{backButton.backText}}</span>
+            </div>
+            {{/if}}
+        </header>
+        <div class="app-container" id="{{ids.containerID}}">
+            <div class="scroller" id="{{ids.scrollID}}">{{html}}</div>
+            <div class="noscroller" id="'{{ids.noscrollID}}"></div>
+        </div>
+    </div>
+</section>

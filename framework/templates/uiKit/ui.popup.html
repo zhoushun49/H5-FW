@@ -1,0 +1,16 @@
+<div class="app-popup-background">
+    <div class="popup">
+        <div class="popup-head">
+            <h3 class="popup-title">{{titleText}}</h3>
+            <h5 class="popup-sub-title">{{subTitleText}}</h5>
+        </div>
+        <div class="popup-body">
+        </div>
+        <div class="popup-buttons row">
+            <!--<button ng-class="button.type || \'button-default\'"></button>-->
+            {{#each buttons}}
+            <button class="button col" sheet-index="{{@index}}">{{title}}</button>
+            {{/each}}
+        </div>
+    </div>
+</div>
